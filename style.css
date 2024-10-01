@@ -6,7 +6,6 @@
 
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.6;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -67,29 +66,28 @@ nav ul li a {
   display: flex;
 }
 
-/* Contenu principal */
-.container {
-  display: flex;
-  justify-content: space-between;
-  flex-grow: 1;
+/* Grille principale pour les colonnes */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
   padding: 20px;
-  flex-wrap: wrap;
-  gap: 20px; /* Ajout d'espace entre les colonnes */
+  flex-grow: 1;
 }
 
-.column {
+/* Flexbox pour les éléments de chaque colonne */
+.flex-column {
   display: flex;
   flex-direction: column;
-  flex-basis: 22%;
-  gap: 20px; /* Espacement vertical entre les divs */
+  gap: 20px;
 }
 
-.box {
+.flex-item {
   background-color: #f4f4f4;
-  border: 1px solid #a5a5a5;
   padding: 20px;
   text-align: center;
   border-radius: 8px;
+  border: 1px solid #a5a5a5;
 }
 
 footer {
@@ -103,18 +101,13 @@ footer {
 
 /* Media queries pour les écrans de taille moyenne */
 @media (max-width: 1200px) {
-  .container {
-    justify-content: space-evenly;
-  }
-  
-  .column {
-    flex-basis: 45%; /* 2 colonnes sur les écrans moyens */
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 /* Media queries pour les petits écrans */
 @media (max-width: 768px) {
-  /* Masquer la navigation par défaut */
   nav ul {
     display: none;
     flex-direction: column;
@@ -128,61 +121,23 @@ footer {
     transition: all 0.3s ease;
   }
 
-  /* Afficher le menu burger */
   nav ul.nav-active {
     display: flex;
-  }
-
-  nav ul li {
-    margin: 10px 0;
   }
 
   .burger {
     display: flex;
   }
 
-/* Style du menu burger lorsque le menu est activé */
-.burger.active .line1 {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.burger.active .line2 {
-  opacity: 0;
-}
-
-.burger.active .line3 {
-  transform: rotate(-45deg) translate(10px, -10px);
-}
-
-  /* Contenu principal sur mobile */
-  .container {
-    flex-direction: column;
-    padding: 10px;
-    gap: 25px;
+  /* Grid sur mobile */
+  .grid-container {
+    grid-template-columns: 1fr;
   }
 
-  .column {
-    flex-basis: 100%;
-    gap: 10px;
-  }
-
-  .box {
+  /* Flexbox reste actif sur mobile */
+  .flex-item {
     padding: 15px;
   }
-}
-
-/* Grid principale */
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  padding: 20px;
-}
-
-.grid-item {
-  background-color: #f4f4f4;
-  padding: 20px;
-  border: 1px solid #ccc;
 }
 
 /* Scroll horizontal */
@@ -201,4 +156,17 @@ footer {
 .scroll-item img {
   width: 100%;
   border-radius: 8px;
+}
+
+/* Style du menu burger lorsqu'il est activé */
+.burger.active .line1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active .line2 {
+  opacity: 0;
+}
+
+.burger.active .line3 {
+  transform: rotate(-45deg) translate(10px, -10px);
 }
