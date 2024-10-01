@@ -170,3 +170,35 @@ footer {
     padding: 15px;
   }
 }
+
+/* Grid principale */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.grid-item {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+/* Scroll horizontal */
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px;
+}
+
+.scroll-item {
+  flex: 0 0 auto;
+  width: 200px;
+  margin-right: 20px;
+}
+
+.scroll-item img {
+  width: 100%;
+  border-radius: 8px;
+}
