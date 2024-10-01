@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, rgb(26, 28, 54), #323660 20%, #323660 80%, rgb(26, 28, 54));
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  color: white;
+  padding: 1rem;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 30px;
+}
+
+.burger div {
+  background-color: white;
+  height: 3px;
+  width: 100%;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Initialement le menu est masqué sur mobile */
+#nav-links {
+  display: none;
+}
+
+#nav-links.nav-active {
+  display: flex;
+}
+
+/* Contenu principal */
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding: 20px;
+  flex-wrap: wrap;
+  gap: 20px; /* Ajout d'espace entre les colonnes */
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 22%;
+  gap: 20px; /* Espacement vertical entre les divs */
+}
+
+.box {
+  background-color: #f4f4f4;
+  border: 1px solid #a5a5a5;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+footer {
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  width: 100%;
+}
+
+/* Media queries pour les écrans de taille moyenne */
+@media (max-width: 1200px) {
+  .container {
+    justify-content: space-evenly;
+  }
+  
+  .column {
+    flex-basis: 45%; /* 2 colonnes sur les écrans moyens */
+  }
+}
+
+/* Media queries pour les petits écrans */
+@media (max-width: 768px) {
+  /* Masquer la navigation par défaut */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgb(26, 28, 54);
+    padding: 1rem;
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
+
+  /* Afficher le menu burger */
+  nav ul.nav-active {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+/* Style du menu burger lorsque le menu est activé */
+.burger.active .line1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active .line2 {
+  opacity: 0;
+}
+
+.burger.active .line3 {
+  transform: rotate(-45deg) translate(10px, -10px);
+}
+
+  /* Contenu principal sur mobile */
+  .container {
+    flex-direction: column;
+    padding: 10px;
+    gap: 25px;
+  }
+
+  .column {
+    flex-basis: 100%;
+    gap: 10px;
+  }
+
+  .box {
+    padding: 15px;
+  }
+}
