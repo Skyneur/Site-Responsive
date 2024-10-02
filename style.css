@@ -28,7 +28,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem;
   background-color: transparent; /* Fond transparent pour la barre de navigation */
 }
 
@@ -79,6 +79,32 @@ nav ul li a:hover {
 
 
 /* ========================== */
+/*         DESCRIPTION        */
+/* ========================== */
+.description-container {
+  display: flex;
+  justify-content: center; /* Centrer horizontalement */
+  margin: 20px; /* Marges autour de la div */
+}
+
+.description {
+  background-color: #f9f9f9; /* Couleur de fond claire */
+  padding: 20px; /* Espacement intérieur */
+  border-radius: 10px; /* Coins arrondis */
+  text-align: center; /* Centrer le texte */
+  font-size: 1.1rem; /* Taille de la police */
+  font-family: 'Arial', sans-serif; /* Police de caractères */
+  color: #333; /* Couleur du texte */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet de profondeur */
+}
+
+.description p {
+  margin: 0; /* Supprimer la marge par défaut */
+  line-height: 1.5; /* Espacement des lignes */
+}
+
+
+/* ========================== */
 /*     GRILLE PRINCIPALE      */
 /* ========================== */
 .grid-container {
@@ -98,19 +124,21 @@ nav ul li a:hover {
 
 .flex-item {
   background-color: #f4f4f4;
-  padding: 20px;
+  padding: 15px;
   text-align: center;
-  border-radius: 8px;
+  border-radius: 6px;
   border: 1px solid #a5a5a5; /* Légère bordure */
   color: #333;
 }
 
-/* Style des images dans la grille */
-.flex-item img {
+/* Style général pour les images */
+.flex-item img, .scroll-item img {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
+  height: 200px; /* Hauteur fixe pour garantir que toutes les images aient la même taille */
+  object-fit: cover; /* Remplit l'espace sans déformer l'image */
+  border-radius: 4px;
 }
+
 
 
 /* ========================== */
