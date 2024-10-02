@@ -16,7 +16,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: linear-gradient(to bottom, rgb(26, 28, 54), #323660 20%, #323660 80%, rgb(26, 28, 54)); /* Dégradé de fond */
+  background: linear-gradient(to bottom, #1a7b5d, #045030 50%, #1a7b5d);
   color: white;
 }
 
