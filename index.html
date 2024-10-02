@@ -108,9 +108,19 @@
       const burger = document.getElementById('burger');
       const navLinks = document.getElementById('nav-links');
 
+      // Gérer le clic sur le bouton "burger"
       burger.addEventListener('click', () => {
           navLinks.classList.toggle('nav-active');
           burger.classList.toggle('active');
+      });
+
+      // Réinitialiser le menu lorsque la fenêtre est redimensionnée
+      window.addEventListener('resize', () => {
+          if (window.innerWidth > 768) {
+              // Assurez-vous que le menu est visible sur les grands écrans
+              navLinks.classList.remove('nav-active');
+              burger.classList.remove('active');
+          }
       });
   </script>
 </body>

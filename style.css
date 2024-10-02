@@ -1,37 +1,45 @@
-/* Reset de base */
+/* ========================== */
+/*       RESET DE BASE        */
+/* ========================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Style général */
+
+/* ========================== */
+/*       STYLE GÉNÉRAL        */
+/* ========================== */
 body {
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: linear-gradient(to bottom, rgb(26, 28, 54), #323660 20%, #323660 80%, rgb(26, 28, 54));
+  background: linear-gradient(to bottom, rgb(26, 28, 54), #323660 20%, #323660 80%, rgb(26, 28, 54)); /* Dégradé de fond */
   color: white;
 }
 
-/* Style de la navigation */
+
+/* ========================== */
+/*         NAVIGATION         */
+/* ========================== */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: transparent;
+  background-color: transparent; /* Fond transparent pour la barre de navigation */
 }
 
 nav .logo {
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: bold; /* Style de la partie logo */
 }
 
 nav ul {
   list-style: none;
-  display: flex;
+  display: flex; /* Visible par défaut sur les grands écrans */
 }
 
 nav ul li {
@@ -41,16 +49,19 @@ nav ul li {
 nav ul li a {
   color: white;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease; /* Effet de transition lors du survol */
 }
 
 nav ul li a:hover {
   color: #f0f0f0;
 }
 
-/* Style du menu burger */
+
+/* ========================== */
+/*         MENU BURGER        */
+/* ========================== */
 .burger {
-  display: none;
+  display: none; /* Le menu burger n'est visible que sur mobile */
   cursor: pointer;
   flex-direction: column;
   justify-content: space-between;
@@ -63,28 +74,22 @@ nav ul li a:hover {
   height: 3px;
   width: 100%;
   border-radius: 10px;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; /* Animation fluide pour les lignes du burger */
 }
 
-/* Navigation masquée par défaut sur mobile */
-#nav-links {
-  display: none;
-}
 
-#nav-links.nav-active {
-  display: flex;
-}
-
-/* Style de la grille principale */
+/* ========================== */
+/*     GRILLE PRINCIPALE      */
+/* ========================== */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* 4 colonnes par défaut */
   gap: 20px;
   padding: 20px;
   flex-grow: 1;
 }
 
-/* Style des colonnes flexibles */
+/* Colonnes flexibles contenant les items */
 .flex-column {
   display: flex;
   flex-direction: column;
@@ -96,7 +101,7 @@ nav ul li a:hover {
   padding: 20px;
   text-align: center;
   border-radius: 8px;
-  border: 1px solid #a5a5a5;
+  border: 1px solid #a5a5a5; /* Légère bordure */
   color: #333;
 }
 
@@ -107,7 +112,10 @@ nav ul li a:hover {
   border-radius: 8px;
 }
 
-/* Footer */
+
+/* ========================== */
+/*         PIED DE PAGE       */
+/* ========================== */
 footer {
   background-color: transparent;
   color: white;
@@ -116,51 +124,13 @@ footer {
   margin-top: auto;
 }
 
-/* Media queries pour les tailles d'écran moyenne */
-@media (max-width: 1200px) {
-  .grid-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
-/* Media queries pour les petits écrans */
-@media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: rgb(26, 28, 54);
-    padding: 1rem;
-    z-index: 1;
-    transition: all 0.3s ease;
-  }
-
-  nav ul.nav-active {
-    display: flex;
-  }
-
-  .burger {
-    display: flex;
-  }
-
-  /* Grid en mode mobile */
-  .grid-container {
-    grid-template-columns: 1fr;
-  }
-
-  /* Ajustement de la flexbox sur mobile */
-  .flex-item {
-    padding: 15px;
-  }
-}
-
-/* Scroll horizontal pour les images */
+/* ========================== */
+/*     SCROLL HORIZONTAL      */
+/* ========================== */
 .horizontal-scroll {
   display: flex;
-  overflow-x: auto;
+  overflow-x: auto; /* Permet le défilement horizontal */
   padding: 20px;
   gap: 20px;
 }
@@ -175,15 +145,73 @@ footer {
   border-radius: 8px;
 }
 
-/* Style du menu burger lorsqu'il est activé */
+
+/* ========================== */
+/*     MEDIA QUERIES          */
+/* ========================== */
+/* Moyen écran (jusqu'à 1200px) */
+@media (max-width: 1200px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* Réduire à 2 colonnes */
+  }
+}
+
+/* Grand écran (au-dessus de 768px) */
+@media (min-width: 769px) {
+  nav ul {
+    display: flex !important; /* Navigation toujours visible */
+  }
+
+  .burger {
+    display: none; /* Cacher le menu burger */
+  }
+}
+
+/* Petit écran (jusqu'à 768px) */
+@media (max-width: 768px) {
+  nav ul {
+    display: none; /* Cache la navigation par défaut */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgb(26, 28, 54); /* Fond pour le menu */
+    padding: 1rem;
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
+
+  nav ul.nav-active {
+    display: flex; /* Réaffiche la navigation lorsque le burger est activé */
+  }
+
+  .burger {
+    display: flex; /* Affiche le menu burger sur petit écran */
+  }
+
+  /* Grid en mode mobile (1 colonne) */
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .flex-item {
+    padding: 15px; /* Réduire l'espace des items en mode mobile */
+  }
+}
+
+
+/* ========================== */
+/*     ANIMATION MENU BURGER  */
+/* ========================== */
 .burger.active .line1 {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(5px, 5px); /* Lignes du burger en X */
 }
 
 .burger.active .line2 {
-  opacity: 0;
+  opacity: 0; /* Cache la ligne du milieu */
 }
 
 .burger.active .line3 {
-  transform: rotate(-45deg) translate(10px, -10px);
+  transform: rotate(-45deg) translate(10px, -10px); /* Lignes du burger en X */
 }
