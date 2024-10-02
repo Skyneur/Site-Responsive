@@ -16,7 +16,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: linear-gradient(to bottom, #1a7b5d, #045030 50%, #1a7b5d);
+  background: linear-gradient(to bottom, #0c3018 5%, #045030, #0c3018 95%); /* Dégradé de couleurs pour le fond */
   color: white;
 }
 
@@ -44,6 +44,7 @@ nav ul {
 
 nav ul li {
   margin-left: 20px;
+  margin-top: 20px;
 }
 
 nav ul li a {
@@ -56,6 +57,25 @@ nav ul li a:hover {
   color: #f0f0f0;
 }
 
+.checked {
+  background-color: #fff; /* Couleur de fond blanche */
+  color: #333; /* Couleur du texte */
+  padding: 10px 20px; /* Espacement intérieur pour créer un bloc */
+  border-radius: 5px; /* Coins légèrement arrondis */
+  text-decoration: none; /* Supprimer la sous-ligne */
+  font-weight: bold; /* Rendre le texte gras */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajouter une ombre légère */
+  transition: background-color 0.3s ease; /* Animation pour le changement de couleur */
+}
+
+.checked:hover {
+  background-color: #163710; /* Couleur de fond lors du survol */
+  color: #fff; /* Changement de couleur du texte au survol */
+}
+
+.not-checked:hover {
+  color: #80b177; /* Changement de couleur du texte au survol */
+}
 
 /* ========================== */
 /*         MENU BURGER        */
@@ -95,7 +115,7 @@ nav ul li a:hover {
   font-size: 1.1rem; /* Taille de la police */
   font-family: 'Arial', sans-serif; /* Police de caractères */
   color: #333; /* Couleur du texte */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet de profondeur */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Ombre légère pour un effet de profondeur */
 }
 
 .description p {
@@ -123,12 +143,14 @@ nav ul li a:hover {
 }
 
 .flex-item {
-  background-color: #f4f4f4;
+  background-color: #dedede;
   padding: 15px;
   text-align: center;
   border-radius: 6px;
   border: 1px solid #a5a5a5; /* Légère bordure */
   color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Ombre légère pour un effet de profondeur */
+
 }
 
 /* Style général pour les images */
@@ -204,7 +226,7 @@ footer {
     top: 60px;
     left: 0;
     width: 100%;
-    background-color: rgb(26, 28, 54); /* Fond pour le menu */
+    background-color: #0c3018; /* Fond pour le menu */
     padding: 1rem;
     z-index: 1;
     transition: all 0.3s ease;
